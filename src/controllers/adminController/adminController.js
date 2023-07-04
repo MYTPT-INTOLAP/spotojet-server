@@ -103,13 +103,13 @@ const createDataByCOE = async (req, res) => {
 
 //user
 
-
-
 const loginUser = async (req, res) => {
     try {
         // using destructuring of body data.
-        const { email, password } = req.body;
+        let data = req.body
+        const { email, password } = data;
 
+        console.log("data")
         //Input data validation
         let msgUserData = isValideAdminLogin(req.body)
         if (msgUserData) {

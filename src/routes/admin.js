@@ -3,7 +3,7 @@ const router = express.Router();
 const multer = require('multer');
 const upload = multer({ dest: 'uploads/' });
 
-const { createUser, createDataByCOE, loginUser, loginAdmin, getUser, updateUser, deleteUser} = require('../controllers/adminController/adminController')
+const { createUser, createDataByCOE, loginUser, getUser, updateUser, deleteUser} = require('../controllers/adminController/adminController')
 const { authentication } = require('../middlewares/authentication')
 const { authorization } = require('../middlewares/authorization')
 
@@ -34,7 +34,7 @@ router.post("/loginUser", loginUser)
 
 //-------------------------> (When admin get, call this api) <----------------------------------//
 
-router.get("/getUser", authentication, getUser)
+router.get("/getUser", getUser)
 
 
 
